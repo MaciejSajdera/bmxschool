@@ -1,0 +1,71 @@
+#colophon {
+	.site-info {
+		justify-content: space-between;
+		column-gap: 4rem;
+
+		h3 {
+			font-weight: 700;
+			font-size: $font-size__smallheader;
+		}
+
+		& > div {
+			margin-bottom: 2rem;
+
+			@media screen and (max-width: $screen__md) {
+				text-align: center;
+			}
+
+			// @media screen and (min-width: $screen__md) {
+			// 	flex: 1 1 25%;
+			// 	max-width: 33%;
+			// }
+		}
+
+		p {
+			margin-bottom: 0.75em;
+		}
+	}
+
+	.social-media {
+		margin-bottom: 4em;
+
+		&__icons {
+			display: flex;
+
+			@media screen and (max-width: $screen__md) {
+				justify-content: center;
+			}
+
+			> * {
+				height: 40px;
+				width: 40px;
+				transition: all 0.3s ease-in-out;
+				margin-right: 1.5rem;
+
+				&:hover {
+					// filter: invert(82%) sepia(14%) saturate(1046%) hue-rotate(92deg)
+					// 	brightness(450%) contrast(107%);
+					transform: scale(1.1);
+				}
+			}
+
+			.facebook {
+				background-image: url(../dist/svg/facebook20.svg);
+				background-size: contain;
+				background-repeat: no-repeat;
+			}
+
+			.instagram {
+				background-image: url(../dist/svg/instagram20.svg);
+				background-size: contain;
+				background-repeat: no-repeat;
+			}
+		}
+	}
+
+	.site-branding {
+		width: 90px;
+		height: 90px;
+		margin: 3rem auto;
+	}
+}

@@ -1,0 +1,83 @@
+// Rem output with px fallback
+@mixin font-size($sizeValue: 1) {
+	font-size: ($sizeValue * 16) * 1px;
+	font-size: $sizeValue * 1rem;
+}
+
+// Center block
+@mixin center-block {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+// Clearfix
+@mixin clearfix() {
+	content: "";
+	display: table;
+	table-layout: fixed;
+}
+
+// Clear after (not all clearfix need this also)
+@mixin clearfix-after() {
+	clear: both;
+}
+
+/// original @author Eduardo Boucas (@eduardoboucas)
+///
+/// @param {Number}   $responsive  - Viewport-based size
+/// @param {Number}   $min         - Minimum font size (px)
+/// @param {Number}   $max         - Maximum font size (px)
+///                                  (optional)
+/// @param {Number}   $fallback    - Fallback for viewport-
+///                                  based units (optional)
+
+// @mixin fluid-font($responsive, $min, $max: false, $fallback: false) {
+// 	$responsive-unitless: $responsive / ($responsive - $responsive + 1);
+// 	$dimension: if(unit($responsive) == "vh", "height", "width");
+// 	$min-breakpoint: $min / $responsive-unitless * 100;
+// 	@media (max-#{$dimension}: #{$min-breakpoint}) {
+// 		font-size: $min;
+// 	}
+// 	@if $max {
+// 		$max-breakpoint: $max / $responsive-unitless * 100;
+// 		@media (min-#{$dimension}: #{$max-breakpoint}) {
+// 			font-size: $max;
+// 		}
+// 	}
+// 	@if $fallback {
+// 		font-size: $fallback;
+// 	}
+// 	font-size: $responsive;
+// }
+
+//fluid typography from css tricks
+
+@function strip-unit($value) {
+	@return $value / ($value * 0 + 1);
+}
+
+@mixin fluid-type($min-vw, $max-vw, $min-font-size, $max-font-size) {
+	$u1: unit($min-vw);
+	$u2: unit($max-vw);
+	$u3: unit($min-font-size);
+	$u4: unit($max-font-size);
+
+	@if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 {
+		& {
+			font-size: $min-font-size;
+			@media screen and (min-width: $min-vw) {
+				font-size: calc(
+					#{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} *
+						((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)})
+				) !important;
+			}
+			@media screen and (min-width: $max-vw) {
+				font-size: $max-font-size !important;
+			}
+		}
+	}
+}
+
+$min_width: 320px;
+$max_width: 1600px;

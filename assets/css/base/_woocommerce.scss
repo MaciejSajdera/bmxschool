@@ -1,0 +1,18 @@
+/* CART */
+
+.product-remove {
+	a {
+		display: block;
+	}
+
+	.cart-remove-icon {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+}
+
+.product-thumbnail img {
+	min-width: 10rem;
+	height: auto;
+}

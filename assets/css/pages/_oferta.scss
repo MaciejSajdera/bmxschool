@@ -1,0 +1,40 @@
+.page-template-oferta-page-template {
+	.welcome-view {
+		img {
+			object-position: center bottom;
+		}
+	}
+
+	.offer-option {
+		color: white;
+		padding: 2rem;
+		border-radius: $border-radius__standard;
+		box-shadow: $box-shadow_standard;
+		max-width: 640px;
+		margin: 0 auto 4rem;
+
+		&--1 {
+			background-color: $color__offer-1;
+		}
+		&--2 {
+			background-color: $color__offer-2;
+		}
+		&--3 {
+			background-color: $color__offer-3;
+		}
+		&--4 {
+			background-color: $color__offer-4;
+		}
+
+		&__details {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			border-bottom: 2px solid white;
+			margin-bottom: 1.5rem;
+			p {
+				font-weight: 500;
+			}
+		}
+	}
+}

@@ -1,0 +1,83 @@
+/* COLORS */
+$color__background-body: #fff;
+$color__background-screen: #f1f1f1;
+$color__background-hr: #ccc;
+$color__background-button: #e6e6e6;
+$color__background-pre: #eee;
+$color__background-ins: #fff9c0;
+
+$color__text-screen: #21759b;
+$color__text-input: #666;
+$color__text-input-focus: #111;
+$color__link: #4169e1; //royalblue
+$color__link-visited: #800080; //purple
+$color__link-hover: #191970; //midnightblue
+$color__text-main: #404040;
+
+$color__border-button: #ccc #ccc #bbb;
+$color__border-button-hover: #ccc #bbb #aaa;
+$color__border-button-focus: #aaa #bbb #bbb;
+$color__border-input: #ccc;
+$color__border-abbr: #666;
+
+$color__error-red: #ff0000;
+$color__success-green: #24b82be6;
+$color__pending: #ffb618;
+$color__verified-blue: #5698e7;
+$color__text--light-grey: #999;
+
+$color__main-theme: #000;
+$color__main-theme--trans: #0002;
+
+$color__offer-1: #83a846;
+$color__offer-2: #4ecac2;
+$color__offer-3: #7bb0e7;
+$color__offer-4: #5f8789;
+
+/* BREAKPOINTS */
+
+$screen__xs: 0px;
+$screen__sm: 600px;
+$screen__md: 900px;
+$screen__lg: 1200px;
+$screen__xl: 1536px;
+
+/* TYPOGRAPHY */
+$font__main: "Comfortaa", cursive;
+$font__code: monaco, consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+$font__pre: "Courier 10 Pitch", courier, monospace;
+$font__line-height-body: 1.5;
+$font__line-height-pre: 1.6;
+
+$font-size__h1: clamp(36px, 6vw, 48px);
+$font-size__h2: clamp(32px, 6vw, 44px);
+$font-size__h3: clamp(30px, 6vw, 36px);
+$font-size__smallheader: clamp(20px, 6vw, 24px);
+$font-size__subheader: clamp(22px, 6vw, 26px);
+$font-size__p: clamp(16px, 6vw, 18px);
+$font-size__cta: clamp(20px, 6vw, 24px);
+$font-size__info: clamp(34px, 6vw, 38px);
+
+/* STRUCTURE */
+$size__site-main: 100%;
+$size__site-sidebar: 25%;
+
+/* RWD */
+$break__medium: 40.063em;
+$break__large: 64.063em;
+
+/* BOX-SHADOWS */
+$box-shadow_standard: 0px 0px 20px 0px rgb(0 0 0 / 20%);
+$box-shadow--header: 0px 0px 20px 0px rgb(0 0 0 / 20%);
+$box-shadow_button--cta: 0px 2px 7px 1px #24b82b4d;
+$box-shadow_button--theme-color: 0 3px 8px 2px rgb(22 83 140 / 20%);
+
+/* TRANSITIONS */
+$transition_regular: all 0.3s ease-in-out;
+$transition__button--standard: all 0.2s ease-in-out;
+
+/* ELEMENTS */
+$padding__side-main--mobile: 1rem;
+$padding__side-main--desktop: 5%;
+
+$border-radius__standard: 8px;
