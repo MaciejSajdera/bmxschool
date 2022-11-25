@@ -37,7 +37,7 @@ $footer_info = get_field("footer_info", get_page_by_title("Kontakt"));
 
 </div><!-- #content -->
 
-<footer id="colophon" class="site-footer site-content--padding">
+<footer id="colophon" class="site-footer site-content--padding max-width--xl">
     <div class="site-info regular-content flex-drow-mcol mb--4">
         <div class="flex flex-col">
             <h3 class="mb--1"><?php echo $column_1_header; ?></h3>

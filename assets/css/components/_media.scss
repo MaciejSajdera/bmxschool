@@ -19,7 +19,6 @@ object {
 	display: inline-block;
 }
 
-
 /* CAPTIONS */
 
 .wp-caption-text {
@@ -45,20 +44,64 @@ object {
 	margin-bottom: 1.5em;
 }
 
-.gallery-item {
-	display: inline-block;
-	text-align: center;
-	vertical-align: top;
-	width: 100%;
+// .gallery-item {
+// 	display: inline-block;
+// 	text-align: center;
+// 	vertical-align: top;
+// 	width: 100%;
 
-	// Loops to enumerate the classes for gallery columns.
-	@for $i from 2 through 9 {
-		.gallery-columns-#{$i} & {
-			max-width: (100% / $i);
+// 	// Loops to enumerate the classes for gallery columns.
+// 	@for $i from 2 through 9 {
+// 		.gallery-columns-#{$i} & {
+// 			max-width: (100% / $i);
+// 		}
+// 	}
+// }
+
+.gallery-caption {
+	display: block;
+}
+
+#colophon,
+#social-media__mobile-menu {
+	.social-media {
+		margin-bottom: 4em;
+
+		&__icons {
+			display: flex;
+			gap: 2rem;
+
+			@media screen and (max-width: $screen__md) {
+				justify-content: center;
+			}
+
+			a {
+				height: 40px;
+				width: 40px;
+				transition: all 0.3s ease-in-out;
+
+				&:hover {
+					// filter: invert(82%) sepia(14%) saturate(1046%) hue-rotate(92deg)
+					// 	brightness(450%) contrast(107%);
+					transform: scale(1.1);
+				}
+			}
+
+			.facebook {
+				background-image: url(../svg/facebook20.svg);
+				background-size: contain;
+				background-repeat: no-repeat;
+			}
+
+			.instagram {
+				background-image: url(../svg/instagram20.svg);
+				background-size: contain;
+				background-repeat: no-repeat;
+			}
 		}
 	}
 }
 
-.gallery-caption {
-	display: block;
+#social-media__mobile-menu {
+	margin-top: auto;
 }

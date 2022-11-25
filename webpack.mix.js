@@ -105,6 +105,7 @@ var sassConfig = {
 	outputStyle: "expanded",
 	indentType: "tab",
 	indentWidth: 1,
+	// setPublicPath: "dist",
 };
 
 // Compile SASS/CSS.
@@ -121,7 +122,9 @@ mix.sass(`${devPath}/css/style.scss`, "css").options(sassConfig);
  * @link https://webpack.js.org/configuration/
  */
 mix.webpackConfig({
-	stats: "minimal",
+	stats: {
+		children: true,
+	},
 	devtool: mix.inProduction() ? false : "source-map",
 	performance: { hints: false },
 	plugins: [
@@ -146,17 +149,19 @@ mix.webpackConfig({
 						[
 							"svgo",
 							{
-								plugins: {
-									name: "preset-default",
-									overrides: {
-										removeViewBox: false,
-										cleanupIDs: false,
-										removeUnknownsAndDefaults: false,
-										addAttributesToSVGElement: {
-											attributes: [{ xmlns: "http://www.w3.org/2000/svg" }],
+								plugins: [
+									{
+										name: "preset-default",
+										overrides: {
+											removeViewBox: false,
+											cleanupIDs: false,
+											removeUnknownsAndDefaults: false,
+											addAttributesToSVGElement: {
+												attributes: [{ xmlns: "http://www.w3.org/2000/svg" }],
+											},
 										},
 									},
-								},
+								],
 							},
 						],
 					],
@@ -173,7 +178,7 @@ if (process.argv.includes("--hot")) {
 	 * @link https://laravel.com/docs/8.x/mix#browsersync-reloading
 	 */
 	mix.browserSync({
-		proxy: "localhost/bmxschool",
+		proxy: "school.local",
 		files: ["dist/**/*", "./**/*.php"],
 	});
 }

@@ -115,6 +115,12 @@
 ---------------------------*/
 @import "components/_product-gallery.scss";
 
+/*---------------------------
+##  Decorators
+---------------------------*/
+
+@import "components/_decorators.scss";
+
 /*--------------------------------------------------------------
 # Layout
 --------------------------------------------------------------*/
@@ -155,6 +161,7 @@
 @import "pages/_home";
 @import "pages/_kadra";
 @import "pages/_oferta";
+@import "pages/_blog";
 
 /*---------------------------
 ## Woocommerce

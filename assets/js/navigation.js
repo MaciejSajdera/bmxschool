@@ -57,9 +57,9 @@ export default class Navigation {
 				const allMenuLinks =
 					this.desktopMenuContainer.querySelectorAll("#main-menu > li");
 
-				console.log(this.desktopMenuContainer);
+				// console.log(this.desktopMenuContainer);
 
-				console.log(allMenuLinks);
+				// console.log(allMenuLinks);
 
 				const background = document.querySelector(".dropdownBackground");
 

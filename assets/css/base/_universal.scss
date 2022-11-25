@@ -181,8 +181,8 @@ svg {
 
 .icon,
 .icon svg {
-	height: 30px;
-	width: 30px;
+	height: 2rem;
+	width: 2rem;
 	cursor: pointer;
 }
 
@@ -214,7 +214,7 @@ svg {
 		margin: auto;
 		width: 50px;
 		height: 50px;
-		background-image: url(../dist/img/loader-black.gif);
+		background-image: url(../img/loader-black.gif);
 		background-size: contain;
 		background-repeat: no-repeat;
 		background-position: center;
@@ -322,20 +322,26 @@ svg {
 
 /* Utilities */
 
-.dnone {
-	display: none;
+.list-none {
+	list-style: none;
+	padding: 0;
 }
 
-.flex {
-	display: flex;
+.link-none {
+	text-decoration: none;
+	color: inherit;
+}
+
+.dnone {
+	display: none;
 }
 
 .block {
 	display: block;
 }
 
-.row {
-	flex-flow: row;
+.flex {
+	display: flex;
 }
 
 .wrap {
@@ -372,11 +378,11 @@ svg {
 }
 
 .items-start {
-	align-items: start;
+	align-items: flex-start;
 }
 
 .items-end {
-	align-items: end;
+	align-items: flex-end;
 }
 
 .content-start {
@@ -500,6 +506,7 @@ input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
+	box-shadow: 0 0 0 30px white inset !important;
 	-webkit-box-shadow: 0 0 0 30px white inset !important;
 }
 
@@ -584,12 +591,6 @@ input:-webkit-autofill:active {
 	background-color: black;
 	padding: 4rem 0;
 	color: white;
-}
-
-.icon {
-	height: 30px;
-	width: 30px;
-	margin-left: 1rem;
 }
 
 .scrollToTopBtn {

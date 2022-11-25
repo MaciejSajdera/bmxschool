@@ -1,4 +1,7 @@
 <?php
+$column_3_header = get_field("column_3_header", get_page_by_title("Kontakt"));
+$instagram_link = get_field("instagram_link", get_page_by_title("Kontakt"));
+$facebook_link = get_field("facebook_link", get_page_by_title("Kontakt"));
 /**
  * The header for our theme
  *
@@ -6,7 +9,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package pstk
+ * @package bmxschool
  */
 ?>
 <!doctype html>
@@ -35,12 +38,12 @@
     <div id="page" class="site" style="visibility: hidden">
         <a class="skip-link screen-reader-text" href="#content"><?php esc_html_e(
         	"Skip to content",
-        	"pstk"
+        	"bmxschool"
         ); ?></a>
 
         <header id="masthead" class="site-header">
 
-            <div class="desktop-menu-container">
+            <div class="desktop-menu-container max-width--xl">
 
                 <div class="site-branding">
                     <?php the_custom_logo(); ?>
@@ -81,6 +84,22 @@
                     	"orderby" => "menu_order",
                     	"container" => "nav",
                     ]); ?>
+
+
+                    <div id="social-media__mobile-menu" class="flex flex-col">
+                        <h4 class="mb--2 text-center"><?php echo 'Follow us!'; ?></h4>
+                        <div class="social-media mb--4">
+                            <div class="social-media__icons">
+                                <div class="">
+                                    <a class="instagram" href="<?php echo $instagram_link; ?>" target="_blank"></a>
+                                </div>
+                                <div class="">
+                                    <a class="facebook" href="<?php echo $facebook_link; ?>" target="_blank"></a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
 
                 <div class="search-mobile-holder">
@@ -99,12 +118,12 @@
                     </button>
 
                     <div class="search-icon-wrapper nav-icon">
-                        <div class="search-link wrapper-flex-column">
+                        <div class="search-link flex">
 
                             <?php
                             $search_icon = file_get_contents(
                             	get_template_directory() .
-                            		"/dist/dist/svg/search.svg"
+                            		"/dist/svg/search.svg"
                             );
                             echo $search_icon;
                             ?>

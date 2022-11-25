@@ -1,0 +1,61 @@
+.badge {
+	z-index: 1;
+	position: absolute;
+	left: 50%;
+	transform: translate(-50%);
+	bottom: 1rem;
+	display: inline-block;
+	padding: 0.65em 0.85em;
+	font-weight: 700;
+	line-height: 1;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: baseline;
+	border-radius: 0.25rem;
+	color: white;
+	background-color: #538fd9d2;
+}
+
+.animated-border-overlay {
+	border: 15px solid #fff;
+	border-bottom-width: 0px;
+	transition: all 0.4s cubic-bezier(0.42, 0, 0.58, 1);
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	width: 100%;
+}
+
+.read-more-overlay {
+	opacity: 0;
+	transition: all 0.4s cubic-bezier(0.42, 0, 0.58, 1);
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	width: 100%;
+	background: rgba(255, 136, 0, 0.3);
+	display: flex;
+	flex-flow: column;
+	justify-content: center;
+	align-items: center;
+
+	p {
+		color: white;
+		font-weight: 700;
+		font-size: $font-size__cta;
+
+		&:after {
+			content: url(../svg/arrow_right.svg);
+			display: block;
+			line-height: 0;
+			margin-left: 0.25em;
+		}
+	}
+
+	.icon--bg {
+		background-image: url(../svg/map_travel_icon.svg);
+		background-size: contain;
+		left: 50%;
+		transform: translate(-50%);
+	}
+}

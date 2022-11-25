@@ -132,12 +132,9 @@ add_action("widgets_init", "bmxschool_widgets_init");
 /**
  * Enqueue scripts and styles.
  */
-function bmxschool_scripts()
-{
-	wp_enqueue_style(
-		"bmxschool-style",
-		get_template_directory_uri() . "/dist/css/style.css"
-	);
+function bmxschool_scripts() {
+
+	wp_enqueue_style( 'bmxschool-style', get_template_directory_uri() . '/dist/css/style.css', array(), '1.05');
 
 	// Include our dynamic styles.
 	// $custom_css = bmxschool_dynamic_styles();
@@ -187,7 +184,7 @@ function wpb_add_google_fonts()
 {
 	wp_enqueue_style(
 		"wpb-google-fonts",
-		"https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;500;700&display=swap",
+		"https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap",
 		false
 	);
 }
@@ -214,6 +211,38 @@ function footer_copyright()
 		$output = $copyright;
 	}
 	return $output;
+}
+
+// Remove filters
+
+remove_filter('term_description','wpautop');
+
+// Posts navigation
+
+function my_posts_navigation()
+{
+?>
+<div class="post-navigation">
+
+    <div>
+        <?php
+		$prev_post = get_adjacent_post(false, '', true);
+		if(!empty($prev_post)) {
+		echo '<a href="' . get_permalink($prev_post->ID) . '" title="' . $prev_post->post_title . '"><span class="post-navigation__prev">Poprzedni</span><p>' . mb_strimwidth( html_entity_decode($prev_post->post_title), 0, 60, '...' ) . '</p></a>'; }
+		?>
+    </div>
+
+    <div>
+        <?php
+		$next_post = get_adjacent_post(false, '', false);
+		if(!empty($next_post)) {
+		echo '<a href="' . get_permalink($next_post->ID) . '" title="' . $next_post->post_title . '"><span class="post-navigation__next">Następny</span><p>' . mb_strimwidth( html_entity_decode($next_post->post_title), 0, 60, '...' ) . '</p></a>'; }
+		?>
+    </div>
+
+</div>
+
+<?php
 }
 
 /* WOOCOMMERCE */

@@ -66,6 +66,7 @@
     "sass": "^1.45.0",
     "sass-loader": "12.4.0",
     "sinon": "^12.0.1",
+    "stylelint-config-wordpress": "^17.0.0",
     "vue-template-compiler": "^2.6.14"
   },
   "dependencies": {

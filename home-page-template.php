@@ -28,7 +28,7 @@ $column_header_1 = get_field("column_header_1", get_page_by_title("Kontakt"));
 
         </section>
 
-        <div class="site-content--padding">
+        <div class="site-content--padding max-width--xl">
             <section class="text-center regular-content">
                 <h2 class="mb--3 uppercase">CZYM JEST BMX SCHOOL?</h2>
                 <p class="text--subheader mb--4">BMX school to <b>profesjnalana szkoła BMX</b>, która powstała w 2015 roku a jej założycielem i pomysłodawcą jest rider oraz trener <b>Michał Basta</b>.</p>
@@ -52,7 +52,7 @@ $column_header_1 = get_field("column_header_1", get_page_by_title("Kontakt"));
             </section>
 
             <section class="narrow-content">
-                <h2 class="text-center mb--8 uppercase">GDZIE PROWADZIMY ZAJĘCIA?</h2>
+                <h2 class="text-center mb--6 uppercase">GDZIE PROWADZIMY ZAJĘCIA?</h2>
 
                 <div class="photo-paragraphs__container">
 

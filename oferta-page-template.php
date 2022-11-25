@@ -11,7 +11,7 @@ $welcome_view = get_field("welcome_view");
 <div id="primary" class="content-area">
     <main id="main" class="site-main">
 
-        <div class="site-content--padding">
+        <div class="site-content--padding max-width--xl">
 
             <section class="regular-content">
                 <div class="welcome-view flex items-center content-center welcome-view-subpage relative">
@@ -57,15 +57,15 @@ $welcome_view = get_field("welcome_view");
                     <div class="offer-option__details-container">
                         <div class="offer-option__details">
                             <p class="name">Pojedyncze zajęcia (60min)</p>
-                            <p class="name">100 PLN</p>
+                            <p class="price">100 PLN</p>
                         </div>
                         <div class="offer-option__details">
                             <p class="name">Pakiet 5 zajęć (5 x 60min)</p>
-                            <p class="name">450 PLN</p>
+                            <p class="price">450 PLN</p>
                         </div>
                         <div class="offer-option__details">
                             <p class="name">Pakiet 10 zajęć (10 x 60min)</p>
-                            <p class="name">850 PLN</p>
+                            <p class="price">850 PLN</p>
                         </div>
                     </div>
                 </div>
@@ -75,11 +75,11 @@ $welcome_view = get_field("welcome_view");
                     <div class="offer-option__details-container">
                         <div class="offer-option__details">
                             <p class="name">Zajęcia we dwójkę - 60min</p>
-                            <p class="name">60 PLN</p>
+                            <p class="price">60 PLN</p>
                         </div>
                         <div class="offer-option__details">
                             <p class="name">Zajęcia we dwójkę - 90min</p>
-                            <p class="name">80 PLN</p>
+                            <p class="price">80 PLN</p>
                         </div>
                     </div>
                 </div>
@@ -90,11 +90,11 @@ $welcome_view = get_field("welcome_view");
                     <div class="offer-option__details-container">
                         <div class="offer-option__details">
                             <p class="name">Pojedyncze zajęcia (90min)</p>
-                            <p class="name">45 PLN</p>
+                            <p class="price">45 PLN</p>
                         </div>
                         <div class="offer-option__details">
                             <p class="name">Pakiet 10 zajęć (10 x 90min)</p>
-                            <p class="name">400 PLN</p>
+                            <p class="price">400 PLN</p>
                         </div>
                     </div>
                 </div>
@@ -109,19 +109,19 @@ $welcome_view = get_field("welcome_view");
                             <p class="name">ROWER BMX 16” 18” 20” + kask <br>
                                 Na pierwsze zajęcia
                             </p>
-                            <p class="name">GRATIS</p>
+                            <p class="price">GRATIS</p>
                         </div>
                         <div class="offer-option__details">
                             <p class="name">ROWER BMX 16” 18” 20” + kask GRATIS! <br>
                                 Na kolejne zajęcia
                             </p>
-                            <p class="name">20 PLN</p>
+                            <p class="price">20 PLN</p>
                         </div>
                         <div class="offer-option__details">
                             <p class="name">ROWER BMX 16” 18” 20” + kask GRATIS! <br>
                                 Cała doba
                             </p>
-                            <p class="name">100 PLN</p>
+                            <p class="price">100 PLN</p>
                         </div>
                     </div>
                 </div>

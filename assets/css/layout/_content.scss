@@ -46,6 +46,11 @@
 	display: block;
 }
 
+.max-width--xl {
+	max-width: $screen__xl;
+	margin: auto;
+}
+
 .site-header {
 	padding-left: $padding__side-main--mobile;
 	padding-right: $padding__side-main--mobile;
@@ -57,7 +62,7 @@
 }
 
 .site-content {
-	padding-top: 8rem;
+	padding-top: 6rem;
 
 	@media screen and (min-width: $screen__lg) {
 		padding-top: 7rem;
@@ -85,7 +90,7 @@ section {
 }
 
 .narrow-content {
-	max-width: 1200px;
+	max-width: $screen__lg;
 	margin-left: auto;
 	margin-right: auto;
 }
@@ -99,13 +104,13 @@ section {
 
 	&__left {
 		@media screen and (min-width: $screen__lg) {
-			width: 45%;
+			width: 40%;
 		}
 	}
 
 	&__right {
 		@media screen and (min-width: $screen__lg) {
-			width: 45%;
+			width: 50%;
 		}
 	}
 }
