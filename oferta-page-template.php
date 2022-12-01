@@ -14,9 +14,9 @@ $welcome_view = get_field("welcome_view");
         <div class="site-content--padding max-width--xl">
 
             <section class="regular-content">
-                <div class="welcome-view flex items-center content-center welcome-view-subpage relative">
+                <div class="welcome-view flex items-start content-center welcome-view-subpage relative">
 
-                    <div class="welcome-view__container flex-drow-mcol">
+                    <div class="welcome-view__container">
 
                         <div class="welcome-view__left mb--2">
 
@@ -56,16 +56,16 @@ $welcome_view = get_field("welcome_view");
                     <h3 class="text-center mb--2">Zajęcia Indywidualne</h3>
                     <div class="offer-option__details-container">
                         <div class="offer-option__details">
-                            <p class="name">Pojedyncze zajęcia (60min)</p>
-                            <p class="price">100 PLN</p>
+                            <p class="name text--smallheader">Pojedyncze zajęcia (60min)</p>
+                            <p class="price text--smallheader">100 PLN</p>
                         </div>
                         <div class="offer-option__details">
-                            <p class="name">Pakiet 5 zajęć (5 x 60min)</p>
-                            <p class="price">450 PLN</p>
+                            <p class="name text--smallheader">Pakiet 5 zajęć (5 x 60min)</p>
+                            <p class="price text--smallheader">450 PLN</p>
                         </div>
                         <div class="offer-option__details">
-                            <p class="name">Pakiet 10 zajęć (10 x 60min)</p>
-                            <p class="price">850 PLN</p>
+                            <p class="name text--smallheader">Pakiet 10 zajęć (10 x 60min)</p>
+                            <p class="price text--smallheader">850 PLN</p>
                         </div>
                     </div>
                 </div>
@@ -74,12 +74,12 @@ $welcome_view = get_field("welcome_view");
                     <h3 class="text-center mb--2">Zajęcia we dwójkę</h3>
                     <div class="offer-option__details-container">
                         <div class="offer-option__details">
-                            <p class="name">Zajęcia we dwójkę - 60min</p>
-                            <p class="price">60 PLN</p>
+                            <p class="name text--smallheader">Zajęcia we dwójkę - 60min</p>
+                            <p class="price text--smallheader">60 PLN</p>
                         </div>
                         <div class="offer-option__details">
-                            <p class="name">Zajęcia we dwójkę - 90min</p>
-                            <p class="price">80 PLN</p>
+                            <p class="name text--smallheader">Zajęcia we dwójkę - 90min</p>
+                            <p class="price text--smallheader">80 PLN</p>
                         </div>
                     </div>
                 </div>
@@ -89,12 +89,12 @@ $welcome_view = get_field("welcome_view");
                     <h3 class="text-center mb--2">Zajęcia Grupowe</h3>
                     <div class="offer-option__details-container">
                         <div class="offer-option__details">
-                            <p class="name">Pojedyncze zajęcia (90min)</p>
-                            <p class="price">45 PLN</p>
+                            <p class="name text--smallheader">Pojedyncze zajęcia (90min)</p>
+                            <p class="price text--smallheader">45 PLN</p>
                         </div>
                         <div class="offer-option__details">
-                            <p class="name">Pakiet 10 zajęć (10 x 90min)</p>
-                            <p class="price">400 PLN</p>
+                            <p class="name text--smallheader">Pakiet 10 zajęć (10 x 90min)</p>
+                            <p class="price text--smallheader">400 PLN</p>
                         </div>
                     </div>
                 </div>
@@ -106,22 +106,22 @@ $welcome_view = get_field("welcome_view");
                     <h3 class="text-center mb--2">Zajęcia Grupowe</h3>
                     <div class="offer-option__details-container">
                         <div class="offer-option__details">
-                            <p class="name">ROWER BMX 16” 18” 20” + kask <br>
+                            <p class="name text--smallheader">ROWER BMX 16” 18” 20” + kask <br>
                                 Na pierwsze zajęcia
                             </p>
-                            <p class="price">GRATIS</p>
+                            <p class="price text--smallheader">GRATIS</p>
                         </div>
                         <div class="offer-option__details">
-                            <p class="name">ROWER BMX 16” 18” 20” + kask GRATIS! <br>
+                            <p class="name text--smallheader">ROWER BMX 16” 18” 20” + kask GRATIS! <br>
                                 Na kolejne zajęcia
                             </p>
-                            <p class="price">20 PLN</p>
+                            <p class="price text--smallheader">20 PLN</p>
                         </div>
                         <div class="offer-option__details">
-                            <p class="name">ROWER BMX 16” 18” 20” + kask GRATIS! <br>
+                            <p class="name text--smallheader">ROWER BMX 16” 18” 20” + kask GRATIS! <br>
                                 Cała doba
                             </p>
-                            <p class="price">100 PLN</p>
+                            <p class="price text--smallheader">100 PLN</p>
                         </div>
                     </div>
                 </div>

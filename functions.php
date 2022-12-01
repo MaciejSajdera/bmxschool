@@ -134,7 +134,7 @@ add_action("widgets_init", "bmxschool_widgets_init");
  */
 function bmxschool_scripts() {
 
-	wp_enqueue_style( 'bmxschool-style', get_template_directory_uri() . '/dist/css/style.css', array(), '1.05');
+	wp_enqueue_style( 'bmxschool-style', get_template_directory_uri() . '/dist/css/style.css', array(), '1.09');
 
 	// Include our dynamic styles.
 	// $custom_css = bmxschool_dynamic_styles();
@@ -190,6 +190,54 @@ function wpb_add_google_fonts()
 }
 add_action("wp_enqueue_scripts", "wpb_add_google_fonts");
 
+add_theme_support( 'admin-bar', array( 'callback' => 'my_admin_bar_css') );
+function my_admin_bar_css()
+{
+?>
+<style type="text/css" media="screen">
+html body {
+    margin-top: 28px !important;
+}
+</style>
+<?php
+}
+
+function my_login_logo_one() { 
+	$custom_logo_id = get_theme_mod( 'custom_logo' );
+	$image = wp_get_attachment_image_src( $custom_logo_id , 'full' );
+?>
+<style type="text/css">
+body.login div#login h1 a {
+    background-image: url(<?php echo $image[0]; ?>);
+    width: 100%;
+    height: 100%;
+    background-size: contain;
+    padding-bottom: 30px;
+}
+</style>
+<?php 
+}
+add_action( 'login_enqueue_scripts', 'my_login_logo_one' );
+
+add_theme_support('category-thumbnails');
+
+add_theme_support( 'post-thumbnails' ); 
+
+//YOAST
+
+// Move Yoast to the bottom of WP page/post editor
+function yoasttobottom() {
+	return 'low';
+}
+add_filter( 'wpseo_metabox_prio', 'yoasttobottom');
+
+//Increase size of yoast fb image for better quality
+function set_custom_facebook_image_size( $img_size ) {
+    return 'large';
+}
+add_filter( 'wpseo_opengraph_image_size', 'set_custom_facebook_image_size' );
+
+
 function footer_copyright()
 {
 	global $wpdb;
@@ -213,6 +261,7 @@ function footer_copyright()
 	return $output;
 }
 
+
 // Remove filters
 
 remove_filter('term_description','wpautop');
@@ -228,7 +277,7 @@ function my_posts_navigation()
         <?php
 		$prev_post = get_adjacent_post(false, '', true);
 		if(!empty($prev_post)) {
-		echo '<a href="' . get_permalink($prev_post->ID) . '" title="' . $prev_post->post_title . '"><span class="post-navigation__prev">Poprzedni</span><p>' . mb_strimwidth( html_entity_decode($prev_post->post_title), 0, 60, '...' ) . '</p></a>'; }
+		echo '<a class="link-none" href="' . get_permalink($prev_post->ID) . '" title="' . $prev_post->post_title . '"><span class="post-navigation__prev">Poprzedni</span><p>' . mb_strimwidth( html_entity_decode($prev_post->post_title), 0, 60, '...' ) . '</p></a>'; }
 		?>
     </div>
 
@@ -236,7 +285,7 @@ function my_posts_navigation()
         <?php
 		$next_post = get_adjacent_post(false, '', false);
 		if(!empty($next_post)) {
-		echo '<a href="' . get_permalink($next_post->ID) . '" title="' . $next_post->post_title . '"><span class="post-navigation__next">Następny</span><p>' . mb_strimwidth( html_entity_decode($next_post->post_title), 0, 60, '...' ) . '</p></a>'; }
+		echo '<a class="link-none" href="' . get_permalink($next_post->ID) . '" title="' . $next_post->post_title . '"><span class="post-navigation__next">Następny</span><p>' . mb_strimwidth( html_entity_decode($next_post->post_title), 0, 60, '...' ) . '</p></a>'; }
 		?>
     </div>
 

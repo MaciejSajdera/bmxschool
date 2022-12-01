@@ -110,26 +110,18 @@ $facebook_link = get_field("facebook_link", get_page_by_title("Kontakt"));
 
                 <div class="mobile-menu__left shop-icons-wrapper">
                     <button class="menu-toggle nav-icon" aria-controls="primary-menu" aria-expanded="false">
-                        <div class="span-wrapper">
+                        <div class="nav-icon-wrapper">
                             <span class="burger-menu-piece"></span>
                             <span class="burger-menu-piece"></span>
                             <span class="burger-menu-piece"></span>
                         </div>
                     </button>
 
-                    <div class="search-icon-wrapper nav-icon">
-                        <div class="search-link flex">
-
-                            <?php
-                            $search_icon = file_get_contents(
-                            	get_template_directory() .
-                            		"/dist/svg/search.svg"
-                            );
-                            echo $search_icon;
-                            ?>
-
+                    <!-- <div class="search-icon-wrapper search-link nav-icon-wrapper search-icon nav-icon">
+                        <div class="search-link nav-icon-wrapper flex">
+                            <div class="search-icon"></div>
                         </div>
-                    </div>
+                    </div> -->
 
                 </div>
 

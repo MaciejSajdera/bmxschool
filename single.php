@@ -10,16 +10,26 @@
 get_header();
 ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main">
+<div id="primary" class="content-area">
+    <main id="main" class="site-main">
 
-		<?php
+        <div class="site-content--padding max-width--xl">
+
+            <div class="breadcrumbs-wrapper mb--2">
+                <?php
+					if ( function_exists('yoast_breadcrumb') ) {
+						yoast_breadcrumb( '<p id="breadcrumbs">','</p>' );
+					}
+				?>
+            </div>
+
+            <?php
 		while ( have_posts() ) :
 			the_post();
 
 			get_template_part( 'template-parts/content', get_post_type() );
 
-			the_post_navigation();
+			my_posts_navigation();
 
 			// If comments are open or we have at least one comment, load up the comment template.
 			// if ( comments_open() || get_comments_number() ) :
@@ -29,8 +39,9 @@ get_header();
 		endwhile; // End of the loop.
 		?>
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
+        </div> <!-- .site-content--padding max-width--xl -->
+    </main><!-- #main -->
+</div><!-- #primary -->
 
 <?php
 // get_sidebar();

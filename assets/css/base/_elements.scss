@@ -116,24 +116,37 @@ table {
 	width: 100%;
 }
 
-.button {
+.button,
+.special-menu-item a,
+#main .frm_button_submit {
 	border-radius: 8px;
-	font-size: $font-size__cta;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	padding: 0.65em 1.25em;
+	padding: 0.5em 1.75em;
 	transition: all 0.3s ease-in-out;
 	border: 0;
+	font-weight: 700;
+	width: fit-content;
 
-	&:hover {
-		background-color: darken($color__success-green, 10%);
+	p {
+		font-size: $font-size__cta;
+		font-weight: 700;
 	}
 
 	&--cta {
 		background-color: $color__success-green;
 		box-shadow: $box-shadow_button--cta;
 		color: white;
+
+		&:hover {
+			background-color: darken($color__success-green, 10%);
+			box-shadow: none;
+		}
+	}
+
+	&:hover {
+		box-shadow: none;
 	}
 }
 
@@ -175,6 +188,7 @@ table {
 }
 .youtube-player img:hover {
 	-webkit-filter: brightness(75%);
+	filter: brightness(75%);
 }
 .youtube-player .play {
 	height: 72px;
@@ -186,4 +200,28 @@ table {
 	position: absolute;
 	background: url("//i.imgur.com/TxzC70f.png") no-repeat;
 	cursor: pointer;
+}
+
+#breadcrumbs {
+	margin-top: 2rem;
+	font-weight: 300;
+	font-size: 12px;
+
+	a,
+	a:visited,
+	.breadcrumb_last {
+		color: $color__text--light-grey;
+	}
+
+	span {
+		color: $color__main-theme;
+	}
+
+	// .breadcrumb_last {
+	// 	color: $color__text-black;
+	// }
+}
+
+.booknetic_appointment_steps_footer {
+	display: none !important;
 }

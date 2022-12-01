@@ -72,12 +72,17 @@ $footer_info = get_field("footer_info", get_page_by_title("Kontakt"));
 
     </div><!-- .site-info -->
     <div class="footer-info text-center">
-        <div class="site-branding mb--2">
+
+        <div class="site-branding">
             <?php the_custom_logo(); ?>
         </div>
-        <?php echo footer_copyright(); ?> Copyright © <?php echo get_bloginfo(
- 	"name"
- ); ?>
+
+        <div class="mt--2">
+            <?php echo footer_copyright(); ?> Copyright © <?php echo get_bloginfo(
+ 	        "name"
+            ); ?>
+        </div>
+
     </div>
 
     <div class="scrollToTopBtn">

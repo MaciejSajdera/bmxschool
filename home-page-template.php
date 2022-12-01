@@ -54,7 +54,7 @@ $column_header_1 = get_field("column_header_1", get_page_by_title("Kontakt"));
             <section class="narrow-content">
                 <h2 class="text-center mb--6 uppercase">GDZIE PROWADZIMY ZAJĘCIA?</h2>
 
-                <div class="photo-paragraphs__container">
+                <div class="photo-paragraphs">
 
                     <div class="photo-paragraphs__single flex-drow-mcol content-between">
                         <div class="paragraph-holder flex flex-col">

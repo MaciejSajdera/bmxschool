@@ -29,8 +29,8 @@
 			display: flex;
 
 			img {
-				max-width: 75px;
-				max-height: 75px;
+				max-width: 65px;
+				max-height: 65px;
 				transition: $transition_regular;
 				object-fit: contain;
 			}
@@ -44,7 +44,7 @@
 
 		.site-branding .custom-logo-link {
 			img {
-				padding: 1rem;
+				padding: 0.75rem;
 			}
 		}
 	}
@@ -187,17 +187,6 @@
 
 	span {
 		background: #000;
-	}
-
-	.span-wrapper {
-		position: relative;
-		width: 20px;
-		height: 16px;
-
-		@media screen and (min-width: $screen__md) {
-			width: 24px;
-			height: 16px;
-		}
 	}
 
 	span {
@@ -391,6 +380,27 @@ $mobile-menu-padding-top: 10rem;
 		align-items: center;
 	}
 
+	.nav-icon-wrapper {
+		position: relative;
+		width: 20px;
+		height: 16px;
+
+		@media screen and (min-width: $screen__md) {
+			width: 24px;
+			height: 16px;
+		}
+	}
+
+	.search-icon {
+		height: 1.5rem;
+		width: 1.5rem;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background-image: url(../svg/search.svg);
+		background-size: contain;
+	}
+
 	.shop-icons-wrapper svg {
 		width: 20px;
 		height: 20px;
@@ -401,6 +411,7 @@ $mobile-menu-padding-top: 10rem;
 	}
 
 	.mobile-menu-wrapper {
+		width: 85%;
 		position: fixed;
 		top: 0;
 		left: 0;
@@ -412,10 +423,9 @@ $mobile-menu-padding-top: 10rem;
 		height: 100%;
 		height: -webkit-fill-available;
 		overflow: scroll;
-		width: 100%;
 		background: $color__background-body;
 		transform: translateX(-100%);
-		transition: opacity 0.2s, visibility 0s linear 0.2s, transform 0.5s ease;
+		transition: opacity 0.2s, visibility 0s linear 0.2s, transform 0.5s ease-out;
 		display: flex;
 		flex-flow: column;
 
@@ -522,13 +532,15 @@ $mobile-menu-padding-top: 10rem;
 	.mobile-menu-wrapper.toggled {
 		transform: translateX(0);
 		visibility: visible;
+
 		opacity: 1;
-		transition: opacity 0.2s, visibility 0s linear 0.2s, transform 0.5s ease;
+		transition: opacity 0.2s, visibility 0s linear 0.2s,
+			transform 0.5s ease-in-out;
 	}
 }
 
 .desktop-menu-container {
-	@media screen and (max-width: $screen__lg) {
+	@media screen and (max-width: $screen__md) {
 		display: none;
 	}
 
@@ -537,7 +549,7 @@ $mobile-menu-padding-top: 10rem;
 	width: 100%;
 
 	.main-menu-wrapper {
-		padding: 0 4rem;
+		padding: 0;
 		display: flex;
 		align-items: center;
 	}
@@ -603,7 +615,8 @@ $mobile-menu-padding-top: 10rem;
 			// }
 		}
 
-		.current_page_item a {
+		.current_page_item a,
+		.current-menu-item a {
 			color: $color__verified-blue;
 		}
 
@@ -760,41 +773,33 @@ $mobile-menu-padding-top: 10rem;
 }
 
 #masthead .special-menu-item {
-	@media screen and (max-width: $screen__lg) {
-		max-width: 250px;
+	@media screen and (max-width: $screen__md) {
 		margin: 4rem auto;
 		border-bottom: none;
 	}
 
 	a {
-		border-radius: 8px;
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		padding: 10px 20px;
-		transition: all 0.3s ease-in-out;
-		border: 0;
 		background-color: $color__success-green;
 		box-shadow: $box-shadow_button--cta;
-		font-weight: 700;
 		color: white;
+		width: fit-content;
+		margin: auto;
+		padding: 0.75em 1.95em;
 
 		&:after {
 			content: url(../svg/calendar.svg);
 			height: 1.5em;
 			width: 1.5em;
-			margin-left: 5px;
+			margin-left: 1em;
 		}
 
 		&:hover {
 			background-color: darken($color__success-green, 10%);
+			box-shadow: none;
 		}
-	}
-}
-
-.custom-menu-item {
-	@media screen and (min-width: 1280px) {
-		margin-left: 4rem;
 	}
 }
 

@@ -34,7 +34,6 @@ input[type="search"] {
 	padding: 3px;
 }
 
-
 input[type="text"],
 input[type="email"],
 input[type="url"],
@@ -49,4 +48,25 @@ textarea {
 	&:focus {
 		color: $color__text-input-focus;
 	}
+}
+
+.form-field {
+	input[type="text"],
+	input[type="email"],
+	textarea {
+		padding: 1em 1.25em;
+		height: auto;
+	}
+
+	// &.frm_error {
+	// 	input[type="text"],
+	// 	input[type="email"],
+	// 	input[type="url"],
+	// 	input[type="password"],
+	// 	input[type="search"],
+	// 	select,
+	// 	textarea {
+	// 		border-color: $color__border-input-error;
+	// 	}
+	// }
 }

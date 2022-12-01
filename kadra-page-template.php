@@ -14,9 +14,9 @@ $welcome_view = get_field("welcome_view");
         <div class="site-content--padding max-width--xl">
 
             <section class="regular-content">
-                <div class="welcome-view flex items-center content-center welcome-view-subpage relative">
+                <div class="welcome-view flex items-start content-center welcome-view-subpage relative">
 
-                    <div class="welcome-view__container flex-drow-mcol">
+                    <div class="welcome-view__container">
 
                         <div class="welcome-view__left mb--2">
 
@@ -52,7 +52,7 @@ $welcome_view = get_field("welcome_view");
             <section class="narrow-content">
                 <h2 class="text-center mb--4">Instruktorzy</h2>
 
-                <div class="photo-paragraphs__container">
+                <div class="photo-paragraphs">
 
                     <?php
                     $args = array(  

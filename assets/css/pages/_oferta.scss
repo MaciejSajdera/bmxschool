@@ -36,7 +36,6 @@
 
 			p {
 				font-weight: 500;
-				font-size: $font-size__smallheader;
 			}
 
 			&:last-of-type {
@@ -46,6 +45,7 @@
 
 		.name {
 			flex: 1 1 100%;
+			margin-right: 1rem;
 		}
 
 		.price {

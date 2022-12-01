@@ -57,8 +57,6 @@
 		?>
     </div><!-- .entry-content -->
 
-    <?php my_posts_navigation(); ?>
-
     <footer class="entry-footer">
         <?php bmxschool_entry_footer(); ?>
     </footer><!-- .entry-footer -->

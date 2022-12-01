@@ -3,11 +3,6 @@
 	display: block;
 }
 
-.post,
-.page {
-	margin: 0 0 1.5em;
-}
-
 .byline,
 .updated:not(.published) {
 	display: none;
@@ -56,13 +51,14 @@
 	padding-right: $padding__side-main--mobile;
 
 	@media screen and (min-width: $screen__lg) {
-		padding-left: $padding__side-main--desktop;
-		padding-right: $padding__side-main--desktop;
+		padding-left: $padding__side-menu--desktop;
+		padding-right: $padding__side-menu--desktop;
 	}
 }
 
 .site-content {
 	padding-top: 6rem;
+	margin-bottom: 6rem;
 
 	@media screen and (min-width: $screen__lg) {
 		padding-top: 7rem;
@@ -75,6 +71,28 @@
 		@media screen and (min-width: $screen__lg) {
 			padding-left: $padding__side-main--desktop;
 			padding-right: $padding__side-main--desktop;
+		}
+	}
+}
+
+#content {
+	&:before {
+		transition: all 0.5s ease-in-out;
+		content: "";
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(0, 0, 0, 0.5);
+		z-index: 1;
+		opacity: 0;
+		pointer-events: none;
+	}
+
+	&.overlay--active {
+		&:before {
+			opacity: 1;
 		}
 	}
 }
@@ -97,9 +115,20 @@ section {
 
 .welcome-view {
 	min-height: 65vh;
+	margin-top: 2rem;
+
+	@media screen and (min-width: $screen__md) {
+		margin-top: 4rem;
+	}
 
 	&__container {
 		justify-content: space-between;
+		display: flex;
+		flex-flow: column;
+
+		@media screen and (min-width: $screen__lg) {
+			flex-flow: row;
+		}
 	}
 
 	&__left {
@@ -119,13 +148,24 @@ section {
 	&__single {
 		.paragraph-holder {
 			margin-bottom: 2rem;
-			@media screen and (min-width: $screen__lg) {
-				width: 40%;
+
+			@media screen and (max-width: $screen__md) {
+				justify-content: center;
+				align-items: center;
+			}
+
+			@media screen and (min-width: $screen__md) {
+				width: 45%;
 			}
 		}
 
 		.image-holder {
-			@media screen and (min-width: $screen__lg) {
+			@media screen and (max-width: $screen__md) {
+				justify-content: center;
+				align-items: center;
+			}
+
+			@media screen and (min-width: $screen__md) {
 				width: 50%;
 			}
 		}
@@ -141,6 +181,10 @@ section {
 			max-width: 100%;
 			width: 100%;
 			object-fit: cover;
+
+			@media screen and (max-width: $screen__md) {
+				width: 550px;
+			}
 		}
 
 		p {
@@ -151,7 +195,7 @@ section {
 	}
 
 	&__single:nth-of-type(odd) {
-		@media screen and (min-width: $screen__lg) {
+		@media screen and (min-width: $screen__md) {
 			flex-direction: row-reverse;
 		}
 	}

@@ -14,6 +14,7 @@ export default class Navigation {
 		this.mobileMenuContainer = document.querySelector(".mobile-menu-wrapper");
 		this.button = document.querySelector(".menu-toggle");
 		this.mainMenu = document.querySelector("#main-menu");
+		this.mainContent = document.querySelector("#content");
 	}
 
 	setupNavigation() {
@@ -22,9 +23,11 @@ export default class Navigation {
 			if (this.mobileMenuContainer.classList.contains("toggled")) {
 				this.mobileMenuContainer.classList.remove("toggled");
 				this.button.setAttribute("aria-expanded", "false");
+				this.mainContent.classList.remove("overlay--active");
 			} else {
 				this.mobileMenuContainer.classList.add("toggled");
 				this.button.setAttribute("aria-expanded", "true");
+				this.mainContent.classList.add("overlay--active");
 			}
 		};
 
@@ -58,7 +61,6 @@ export default class Navigation {
 					this.desktopMenuContainer.querySelectorAll("#main-menu > li");
 
 				// console.log(this.desktopMenuContainer);
-
 				// console.log(allMenuLinks);
 
 				const background = document.querySelector(".dropdownBackground");
@@ -135,7 +137,7 @@ export default class Navigation {
 			}
 		};
 
-		const mediaQueryDesktop = window.matchMedia("(min-width: 1024px)");
+		const mediaQueryDesktop = window.matchMedia("(min-width: 1200px)");
 		mediaQueryDesktop.addListener(handleDesktopChange);
 		handleDesktopChange(mediaQueryDesktop);
 
@@ -233,7 +235,7 @@ export default class Navigation {
 			});
 		};
 
-		const mediaQueryMobile = window.matchMedia("(max-width: 1024px)");
+		const mediaQueryMobile = window.matchMedia("(max-width: 1200px)");
 
 		let mobileMenuWasAlreadyFired = false;
 

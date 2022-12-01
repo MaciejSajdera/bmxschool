@@ -153,9 +153,9 @@ mix.webpackConfig({
 									{
 										name: "preset-default",
 										overrides: {
-											removeViewBox: false,
-											cleanupIDs: false,
-											removeUnknownsAndDefaults: false,
+											// removeViewBox: false,
+											// cleanupIDs: false,
+											// removeUnknownsAndDefaults: false,
 											addAttributesToSVGElement: {
 												attributes: [{ xmlns: "http://www.w3.org/2000/svg" }],
 											},

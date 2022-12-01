@@ -87,6 +87,7 @@ h2 {
 
 h3 {
 	font-size: $font-size__h3;
+	font-weight: 500;
 }
 
 p {
@@ -95,6 +96,11 @@ p {
 }
 
 .text {
+	&--section-title {
+		font-size: $font-size__section-title;
+		font-weight: 700;
+	}
+
 	&--smallheader {
 		font-size: $font-size__smallheader;
 	}

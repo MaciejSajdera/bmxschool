@@ -71,14 +71,15 @@ object {
 			display: flex;
 			gap: 2rem;
 
-			@media screen and (max-width: $screen__md) {
+			@media screen and (max-width: $screen__lg) {
 				justify-content: center;
 			}
 
 			a {
-				height: 40px;
-				width: 40px;
+				height: 35px;
+				width: 35px;
 				transition: all 0.3s ease-in-out;
+				padding: 1em;
 
 				&:hover {
 					// filter: invert(82%) sepia(14%) saturate(1046%) hue-rotate(92deg)

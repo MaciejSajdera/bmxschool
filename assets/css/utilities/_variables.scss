@@ -51,13 +51,15 @@ $font__line-height-pre: 1.6;
 
 $font-size__h1: clamp(36px, 6vw, 48px);
 $font-size__h2: clamp(32px, 6vw, 44px);
-$font-size__h3: clamp(28px, 6vw, 24px);
-$font-size__smallheader: clamp(20px, 6vw, 24px);
+$font-size__section-title: clamp(24px, 6vw, 36px);
+$font-size__h3: clamp(20px, 6vw, 24px);
 $font-size__subheader: clamp(22px, 6vw, 18px);
+$font-size__smallheader: clamp(16px, 4vw, 20px);
 $font-size__p: clamp(16px, 6vw, 18px);
 $font-size__cta: clamp(20px, 6vw, 24px);
 $font-size__info: clamp(34px, 6vw, 38px);
-$font-size__small: clamp(10px, 6vw, 12px);
+$font-size__s: clamp(12px, 6vw, 14px);
+$font-size__xs: clamp(10px, 6vw, 12px);
 
 /* STRUCTURE */
 $size__site-main: 100%;
@@ -70,8 +72,9 @@ $break__large: 64.063em;
 /* BOX-SHADOWS */
 $box-shadow_standard: 0px 0px 20px 0px rgb(0 0 0 / 20%);
 $box-shadow--header: 0px 0px 20px 0px rgb(0 0 0 / 20%);
-$box-shadow_button--cta: 0px 2px 7px 1px #24b82b4d;
-$box-shadow_button--theme-color: 0 3px 8px 2px rgb(22 83 140 / 20%);
+$box-shadow_button--cta: rgb(36 184 43 / 30%) 0px 9px 33px,
+	rgb(36 184 43 / 30%) 0px 0px 21px;
+$box-shadow_button--theme-color: 0 3px 8px 2px rgba(2, 25, 29, 0.2);
 
 /* TRANSITIONS */
 $transition_regular: all 0.3s ease-in-out;
@@ -80,5 +83,6 @@ $transition__button--standard: all 0.2s ease-in-out;
 /* ELEMENTS */
 $padding__side-main--mobile: 1rem;
 $padding__side-main--desktop: 5%;
+$padding__side-menu--desktop: 6.5%;
 
 $border-radius__standard: 8px;
