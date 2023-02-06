@@ -57,29 +57,29 @@ $welcome_view = get_field("welcome_view");
                     <div class="offer-option__details-container">
                         <div class="offer-option__details">
                             <p class="name text--smallheader">Pojedyncze zajęcia (60min)</p>
-                            <p class="price text--smallheader">100 PLN</p>
+                            <p class="price text--smallheader">120 PLN</p>
                         </div>
                         <div class="offer-option__details">
                             <p class="name text--smallheader">Pakiet 5 zajęć (5 x 60min)</p>
-                            <p class="price text--smallheader">450 PLN</p>
+                            <p class="price text--smallheader">550 PLN</p>
                         </div>
                         <div class="offer-option__details">
                             <p class="name text--smallheader">Pakiet 10 zajęć (10 x 60min)</p>
-                            <p class="price text--smallheader">850 PLN</p>
+                            <p class="price text--smallheader">1000 PLN</p>
                         </div>
                     </div>
                 </div>
 
                 <div class="offer-option offer-option--2">
-                    <h3 class="text-center mb--2">Zajęcia we dwójkę</h3>
+                    <h3 class="text-center mb--2">Zajęcia dla dwóch osób</h3>
                     <div class="offer-option__details-container">
                         <div class="offer-option__details">
-                            <p class="name text--smallheader">Zajęcia we dwójkę - 60min</p>
-                            <p class="price text--smallheader">60 PLN</p>
+                            <p class="name text--smallheader">2-óch uczestników (60min)</p>
+                            <p class="price text--smallheader">70 PLN/os.</p>
                         </div>
                         <div class="offer-option__details">
-                            <p class="name text--smallheader">Zajęcia we dwójkę - 90min</p>
-                            <p class="price text--smallheader">80 PLN</p>
+                            <p class="name text--smallheader">2-óch uczestników (90min)</p>
+                            <p class="price text--smallheader">90 PLN/os.</p>
                         </div>
                     </div>
                 </div>
@@ -90,11 +90,11 @@ $welcome_view = get_field("welcome_view");
                     <div class="offer-option__details-container">
                         <div class="offer-option__details">
                             <p class="name text--smallheader">Pojedyncze zajęcia (90min)</p>
-                            <p class="price text--smallheader">45 PLN</p>
+                            <p class="price text--smallheader">55 PLN</p>
                         </div>
                         <div class="offer-option__details">
                             <p class="name text--smallheader">Pakiet 10 zajęć (10 x 90min)</p>
-                            <p class="price text--smallheader">400 PLN</p>
+                            <p class="price text--smallheader">450 PLN</p>
                         </div>
                     </div>
                 </div>
@@ -103,7 +103,6 @@ $welcome_view = get_field("welcome_view");
             <section class="narrow-content">
                 <h2 class="text-center mb--4">Wynajem sprzętu</h2>
                 <div class="offer-option offer-option--4">
-                    <h3 class="text-center mb--2">Zajęcia Grupowe</h3>
                     <div class="offer-option__details-container">
                         <div class="offer-option__details">
                             <p class="name text--smallheader">ROWER BMX 16” 18” 20” + kask <br>
@@ -112,13 +111,13 @@ $welcome_view = get_field("welcome_view");
                             <p class="price text--smallheader">GRATIS</p>
                         </div>
                         <div class="offer-option__details">
-                            <p class="name text--smallheader">ROWER BMX 16” 18” 20” + kask GRATIS! <br>
-                                Na kolejne zajęcia
+                            <p class="name text--smallheader">ROWER BMX 16” 18” 20” + kask <br>
+                                Na czas zajęć
                             </p>
-                            <p class="price text--smallheader">20 PLN</p>
+                            <p class="price text--smallheader">30 PLN</p>
                         </div>
                         <div class="offer-option__details">
-                            <p class="name text--smallheader">ROWER BMX 16” 18” 20” + kask GRATIS! <br>
+                            <p class="name text--smallheader">ROWER BMX 16” 18” 20” + kask <br>
                                 Cała doba
                             </p>
                             <p class="price text--smallheader">100 PLN</p>

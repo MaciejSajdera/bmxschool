@@ -114,7 +114,7 @@ section {
 }
 
 .welcome-view {
-	min-height: 65vh;
+	min-height: 50vh;
 	margin-top: 2rem;
 
 	@media screen and (min-width: $screen__md) {
@@ -138,14 +138,21 @@ section {
 	}
 
 	&__right {
+		max-height: 510px;
 		@media screen and (min-width: $screen__lg) {
 			width: 50%;
 		}
+	}
+
+	img {
+		object-position: center;
 	}
 }
 
 .photo-paragraphs {
 	&__single {
+		margin-bottom: 8rem;
+
 		.paragraph-holder {
 			margin-bottom: 2rem;
 
@@ -191,12 +198,35 @@ section {
 			margin-bottom: 0.75em;
 		}
 
-		margin-bottom: 8rem;
+		ul {
+			width: 100%;
+		}
+
+		li {
+			width: fit-content;
+			text-align: left;
+			margin-right: auto;
+		}
 	}
 
 	&__single:nth-of-type(odd) {
 		@media screen and (min-width: $screen__md) {
 			flex-direction: row-reverse;
+		}
+	}
+
+	&__single:nth-of-type(even) {
+		@media screen and (min-width: $screen__md) {
+			h3 {
+				text-align: right;
+			}
+
+			li {
+				width: fit-content;
+				text-align: right;
+				margin-left: auto;
+				margin-right: 0;
+			}
 		}
 	}
 }

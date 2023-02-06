@@ -6,8 +6,11 @@
  */
 
 get_header();
-$czym_jest_image = get_field("czym_jest_image");
-$column_header_1 = get_field("column_header_1", get_page_by_title("Kontakt"));
+
+$content_1 = get_field("content_1");
+$content_2 = get_field("content_2");
+$content_1_image = $content_1["image"];
+
 ?>
 
 
@@ -30,10 +33,10 @@ $column_header_1 = get_field("column_header_1", get_page_by_title("Kontakt"));
 
         <div class="site-content--padding max-width--xl">
             <section class="text-center regular-content">
-                <h2 class="mb--3 uppercase">CZYM JEST BMX SCHOOL?</h2>
-                <p class="text--subheader mb--4">BMX school to <b>profesjnalana szkoła BMX</b>, która powstała w 2015 roku a jej założycielem i pomysłodawcą jest rider oraz trener <b>Michał Basta</b>.</p>
+                <h2 class="mb--3 uppercase"><?php echo $content_1['header'] ?></h2>
+                <div><?php echo $content_1['description'] ?></div>
                 <div class="image-holder">
-                    <img class="box-shadow--standard border-radius--standard" src="<?php echo $czym_jest_image[
+                    <img class="box-shadow--standard border-radius--standard" src="<?php echo $content_1_image[
                     	"url"
                     ]; ?>" />
                 </div>
@@ -41,13 +44,10 @@ $column_header_1 = get_field("column_header_1", get_page_by_title("Kontakt"));
 
 
             <section class="regular-content">
-                <h2 class="text-center mb--3 uppercase">Jaka jest nasza misja?</h2>
-                <p class="text--subheader mb--4">
-                    Misją BMX School jest przekazywanie wiedzy i zajawki jaką jest BMX. Jako profesjonaliści wiemy że dbając o odpowiednie <b>przygotowanie merytoryczne, mentalne oraz żywieniowe</b> uczymy zdrowych nawyków które pozwolą utrzymywać <b>świetną kondycję fizyczną</b>.
-                    BMX kształtuje <b>poczucie własnej wartości, silny charakter oraz otwartość</b> która przekłada się na każdą dziedzinę życia. <b>Ambicja i systematyka</b> to bez wątpienia jedne z największych atutów zapisanych w naturze zajawki jaką jest <b>BMX</b>!
-                </p>
+                <h2 class="text-center mb--3 uppercase"><?php echo $content_2['header'] ?></h2>
+                <div class="mb--4"><?php echo $content_2['description'] ?></div>
 
-                <div class="youtube-player box-shadow--standard border-radius--standard" data-id="hdyIPYviSN8"></div>
+                <div class="youtube-player box-shadow--standard border-radius--standard" data-id="<?php echo $content_2['youtube_url'] ?>" data-thumb="<?php echo $content_2['video_placeholder']['url'] ?>"></div>
 
             </section>
 

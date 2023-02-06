@@ -126,13 +126,14 @@ body.blog {
 		}
 
 		.post-thumbnail {
-			width: 60%;
+			width: 50%;
 			padding-top: 0;
 			float: right;
 			display: flex;
 			flex-flow: column;
 			justify-content: center;
 			align-items: center;
+			height: 280px;
 
 			@media screen and (max-width: $screen__lg) {
 				width: 100%;
@@ -141,7 +142,8 @@ body.blog {
 			}
 
 			@media screen and (min-width: $screen__lg) {
-				padding: 0em 0 3em 3em;
+				margin: 0 0 3em 4em;
+				height: 420px;
 				align-items: flex-start;
 			}
 
@@ -168,6 +170,17 @@ body.blog {
 			// 	line-height: 0.65;
 			// 	margin: 0.1em 0.1em 0.1em 0;
 			// }
+		}
+	}
+
+	.wyjazd {
+		.wyjazd-info {
+			p {
+				@media screen and (min-width: $screen__md) {
+					min-width: 18rem;
+					max-width: 24rem;
+				}
+			}
 		}
 	}
 }

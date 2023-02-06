@@ -47,27 +47,39 @@ document.addEventListener("DOMContentLoaded", () => {
 	/* Light YouTube Embeds by @labnol */
 	/* Web: http://labnol.org/?p=27941 */
 
+	function getYouTubeGetID(url) {
+		url = url.split(/(vi\/|v=|\/v\/|youtu\.be\/|\/embed\/)/);
+		return url[2] !== undefined ? url[2].split(/[^0-9a-z_\-]/i)[0] : url[0];
+	}
+
 	var div,
 		n,
 		v = document.getElementsByClassName("youtube-player");
 	for (n = 0; n < v.length; n++) {
 		div = document.createElement("div");
-		div.setAttribute("data-id", v[n].dataset.id);
-		div.innerHTML = labnolThumb(v[n].dataset.id);
+		div.setAttribute("data-id", getYouTubeGetID(v[n].dataset.id));
+		div.setAttribute("data-thumb", v[n].dataset.thumb);
+		div.innerHTML = labnolThumb(
+			getYouTubeGetID(v[n].dataset.id),
+			v[n].dataset.thumb
+		);
 		div.onclick = labnolIframe;
 		v[n].appendChild(div);
 	}
 
-	function labnolThumb(id) {
-		var thumb =
-				'<img src="https://bmxschool.grapewebtech.pl/wp-content/uploads/2022/07/bmxschool_banner_black.jpg">',
+	function labnolThumb(id, thumbURL) {
+		var thumb = `<img src="${thumbURL}">`,
 			play = '<div class="play"></div>';
 		return thumb.replace("ID", id) + play;
 	}
+
 	function labnolIframe() {
 		var iframe = document.createElement("iframe");
 		var embed = "https://www.youtube.com/embed/ID?autoplay=1";
-		iframe.setAttribute("src", embed.replace("ID", this.dataset.id));
+		iframe.setAttribute(
+			"src",
+			embed.replace("ID", getYouTubeGetID(this.dataset.id))
+		);
 		iframe.setAttribute("frameborder", "0");
 		iframe.setAttribute("allowfullscreen", "1");
 		this.parentNode.replaceChild(iframe, this);

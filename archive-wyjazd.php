@@ -13,12 +13,12 @@ $today = date("Y-m-d");
 $args_future_events = array(
 	'post_type'         => 'wyjazd',
 	'posts_per_page'    => -1,
-	'meta_key'          => 'wyjazd_date_time',
+	'meta_key'          => 'wyjazd_start_date',
     'orderby' => 'meta_value',
 	'order'             => 'ASC',
     'meta_query' => array(
         array(
-           'key' => 'wyjazd_date_time',
+           'key' => 'wyjazd_start_date',
            'meta-value' => $value,
            'value' => $today,
            'compare' => '>=',
@@ -32,12 +32,12 @@ $future_event = query_posts($args_future_events);
 $args_past_events = array(
 	'post_type'         => 'wyjazd',
 	'posts_per_page'    => -1,
-	'meta_key'          => 'wyjazd_date_time',
+	'meta_key'          => 'wyjazd_start_date',
     'orderby' => 'meta_value',
 	'order'             => 'ASC',
     'meta_query' => array(
         array(
-           'key' => 'wyjazd_date_time',
+           'key' => 'wyjazd_start_date',
            'meta-value' => $value,
            'value' => $today,
            'compare' => '<',
@@ -46,7 +46,7 @@ $args_past_events = array(
 )
 );
 
-$past_event = query_posts($args_past_events);
+$past_events = query_posts($args_past_events);
 
 
 // aktualnie sortuje malejaco do czasu edycji posta (najnowszy zaktuualizowany ostatni)
@@ -58,7 +58,6 @@ $past_event = query_posts($args_past_events);
 
             <section class="regular-content mt--2">
 
-                <?php if( $posts ): ?>
 
                 <header class="page-header mb--4">
 
@@ -77,7 +76,7 @@ $past_event = query_posts($args_past_events);
                     <ul class="blog-grid list-none">
 
                         <?php
-                foreach( $future_event as $post ): 
+                foreach( $future_event as $post ):
                     setup_postdata( $post )
                     ?>
 
@@ -95,6 +94,11 @@ $past_event = query_posts($args_past_events);
 
                 </div>
 
+                <?php
+
+                if ($past_events) {
+
+                ?>
                 <div class="past-events mb--4">
 
                     <h3 class="text--section-title">Minione wyjazdy:</h3>
@@ -102,28 +106,27 @@ $past_event = query_posts($args_past_events);
                     <ul class="blog-grid list-none">
 
                         <?php
-                foreach( $past_event as $post ): 
-                setup_postdata( $post )
-                ?>
+                            foreach( $past_events as $post ):
+                            setup_postdata( $post )
+                            ?>
 
                         <li>
                             <?php get_template_part( 'template-parts/single-post-tile', get_post_type() ); ?>
                         </li>
 
                         <?php
-                endforeach;
-                 ?>
+                         endforeach;
+                        ?>
 
                     </ul>
 
                 </div>
 
+                <?php
+                }
 
-                <?php else :
+                ?>
 
-			get_template_part( 'template-parts/content', 'none' );
-
-		endif; ?>
 
             </section>
 

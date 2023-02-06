@@ -134,7 +134,7 @@ add_action("widgets_init", "bmxschool_widgets_init");
  */
 function bmxschool_scripts() {
 
-	wp_enqueue_style( 'bmxschool-style', get_template_directory_uri() . '/dist/css/style.css', array(), '1.09');
+	wp_enqueue_style( 'bmxschool-style', get_template_directory_uri() . '/dist/css/style.css', array(), '1.21');
 
 	// Include our dynamic styles.
 	// $custom_css = bmxschool_dynamic_styles();
@@ -167,8 +167,8 @@ function bmxschool_scripts() {
 			// my else scripts go here...
 		// }
 
-		wp_register_script('handleProductVariationChange', get_template_directory_uri() . '/dist/js/handleProductVariationChange.js', array('jquery') ); 
-		wp_localize_script('handleProductVariationChange', 'ajax_params', 
+		wp_register_script('handleProductVariationChange', get_template_directory_uri() . '/dist/js/handleProductVariationChange.js', array('jquery') );
+		wp_localize_script('handleProductVariationChange', 'ajax_params',
 		  array(
 			  'ajaxurl' => admin_url('admin-ajax.php'),
 		  ));
@@ -177,6 +177,9 @@ function bmxschool_scripts() {
 	} */
 }
 add_action("wp_enqueue_scripts", "bmxschool_scripts");
+
+/* Block external access to xmlrpc */
+add_filter('xmlrpc_enabled', '__return_false');
 
 /* FONTS */
 
@@ -202,7 +205,7 @@ html body {
 <?php
 }
 
-function my_login_logo_one() { 
+function my_login_logo_one() {
 	$custom_logo_id = get_theme_mod( 'custom_logo' );
 	$image = wp_get_attachment_image_src( $custom_logo_id , 'full' );
 ?>
@@ -215,21 +218,19 @@ body.login div#login h1 a {
     padding-bottom: 30px;
 }
 </style>
-<?php 
+<?php
 }
 add_action( 'login_enqueue_scripts', 'my_login_logo_one' );
 
 add_theme_support('category-thumbnails');
 
-add_theme_support( 'post-thumbnails' ); 
+add_theme_support( 'post-thumbnails' );
 
 //YOAST
 
 // Move Yoast to the bottom of WP page/post editor
-function yoasttobottom() {
-	return 'low';
-}
-add_filter( 'wpseo_metabox_prio', 'yoasttobottom');
+add_filter( 'wpseo_metabox_prio', function() { return 'low'; } );
+
 
 //Increase size of yoast fb image for better quality
 function set_custom_facebook_image_size( $img_size ) {
@@ -904,7 +905,7 @@ add_action('wp_enqueue_scripts', 'woocommerce_ajax_add_to_cart_js', 99);
 
 add_action('wp_ajax_woocommerce_ajax_add_to_cart', 'woocommerce_ajax_add_to_cart');
 add_action('wp_ajax_nopriv_woocommerce_ajax_add_to_cart', 'woocommerce_ajax_add_to_cart');
-        
+
 function woocommerce_ajax_add_to_cart() {
 
             $product_id = apply_filters('woocommerce_add_to_cart_product_id', absint($_POST['product_id']));
@@ -942,7 +943,7 @@ function woocommerce_ajax_add_to_cart() {
     $abcdefgh_i = $loop;
     // Add filter to update field name
     add_filter( 'acf/prepare_field', 'acf_prepare_field_update_field_name' );
-    
+
     // Loop through all field groups
     $acf_field_groups = acf_get_field_groups();
     foreach( $acf_field_groups as $acf_field_group ) {
@@ -957,7 +958,7 @@ function woocommerce_ajax_add_to_cart() {
             }
         }
     }
-    
+
     // Remove filter
     remove_filter( 'acf/prepare_field', 'acf_prepare_field_update_field_name' );
 }, 10, 3 ); */
@@ -991,7 +992,7 @@ function woocommerce_ajax_add_to_cart() {
     })
 })(jQuery);
 </script>
-<?php      
+<?php
 }
 
 if( function_exists('acf_add_local_field_group') ):
@@ -1095,7 +1096,7 @@ function get_variation_gallery_with_ajax() {
 			array_push($variation_object_for_ajax->variation_id, $variation_ID);
 			array_push($variation_object_for_ajax->variation_gallery_urls_thumbnails, wp_get_attachment_image_src($variation_main_image_id, "thumbnail"));
 			array_push($variation_object_for_ajax->variation_gallery_urls_fullsize, wp_get_attachment_image_src($variation_main_image_id, "fullsize"));
-			
+
 		}
 	}
 
@@ -1109,7 +1110,7 @@ function get_variation_gallery_with_ajax() {
 	}
 
 	print_r(json_encode($variation_object_for_ajax ));
-		
+
 	die();
 
 }
@@ -1147,7 +1148,7 @@ function get_product_main_image_and_gallery_with_ajax() {
 	}}
 
 	print_r(json_encode( $product_main_image_and_gallery ));
-		
+
 	die();
 
 }

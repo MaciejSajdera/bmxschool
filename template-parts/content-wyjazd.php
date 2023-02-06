@@ -7,9 +7,16 @@
  * @package bmxschool
  */
 
-$wyjazd_date_time = get_field('wyjazd_date_time');
+$variant = get_field('variant');
+$local = $variant === 'lokalne';
+$trip = $variant === 'wyjazdowe';
+
+$wyjazd_start_date = get_field('wyjazd_start_date');
+$wyjazd_end_date = get_field('wyjazd_end_date');
 $destination = get_field('destination');
 $start_place = get_field('start_place');
+$spot = get_field('spot');
+$time = get_field('time');
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class('mb--4'); ?>>
@@ -26,11 +33,21 @@ $start_place = get_field('start_place');
 
         <?php
 
-		echo '<div class="flex items-center content-between w--fit"><p class="w-min--12 w-max--14"><strong>Data wyjazdu: </strong></p><p>'.mb_strimwidth( html_entity_decode($wyjazd_date_time), 0, 60, '...' ).'</p></div>';
-		echo '<div class="flex items-center content-between w--fit"><p class="w-min--12 w-max--14"><strong>Miejsce docelowe: </strong></p>'.mb_strimwidth( html_entity_decode($destination), 0, 60, '...' ).'</p></div>';
-		echo '<div class="flex items-center content-between w--fit"><p class="w-min--12 w-max--14"><strong>Wyjazd z: </strong></p>'.mb_strimwidth( html_entity_decode($start_place), 0, 60, '...' ).'</p></div>';
+		echo '<div class="wyjazd-info flex items-center content-between w--fit"><p class="w-min--12 w-max--14"><strong>Data rozpoczęcia: </strong></p><p>'.mb_strimwidth( html_entity_decode($wyjazd_start_date), 0, 60, '...' ).'</p></div>';
+		echo '<div class="wyjazd-info flex items-center content-between w--fit"><p class="w-min--12 w-max--14"><strong>Data zakończenia: </strong></p><p>'.mb_strimwidth( html_entity_decode($wyjazd_end_date), 0, 60, '...' ).'</p></div>';
 
+		if ($trip) {
+			echo '<div class="wyjazd-info flex items-center content-between w--fit"><p class="w-min--12 w-max--14"><strong>Miejsce docelowe: </strong></p>'.mb_strimwidth( html_entity_decode($destination), 0, 60, '...' ).'</p></div>';
+			echo '<div class="wyjazd-info flex items-center content-between w--fit"><p class="w-min--12 w-max--14"><strong>Miejsce zbiórki: </strong></p>'.mb_strimwidth( html_entity_decode($start_place), 0, 60, '...' ).'</p></div>';
+		}
 
+		if ($local) {
+			echo '<div class="wyjazd-info flex items-center content-between w--fit"><p class="w-min--12 w-max--14"><strong>Miejsce wydarzenia: </strong></p>'.mb_strimwidth( html_entity_decode($spot), 0, 60, '...' ).'</p></div>';
+		}
+
+		echo '<div class="wyjazd-info flex items-center content-between w--fit"><p class="w-min--12 w-max--14"><strong>Godzina: </strong></p>'.mb_strimwidth( html_entity_decode($time), 0, 60, '...' ).'</p></div>';
+
+		
 		if ( 'post' === get_post_type() ) :
 			?>
         <div class="entry-meta">

@@ -11,71 +11,68 @@
  */
 
 // Import required packages.
-const mix     = require( 'laravel-mix' );
-const rimraf  = require( 'rimraf' );
-const fs      = require( 'fs' );
+const mix = require("laravel-mix");
+const rimraf = require("rimraf");
+const fs = require("fs");
 
 // Folder name to export the files to.
-let exportPath = 'bmxschool';
+let exportPath = "bmxschool";
 
 // Theme root-level files to include.
 let files = [
-	'style.css',
-	'changelog.md',
-	'functions.php',
-	'index.php',
-	'LICENSE',
-	'README.md',
-//	'readme.txt',        // Required for WordPress.org theme review.
-	'screenshot.png'
+	"style.css",
+	"changelog.md",
+	"functions.php",
+	"index.php",
+	"LICENSE",
+	"README.md",
+	//	'readme.txt',        // Required for WordPress.org theme review.
+	"screenshot.png",
 ];
 
 // Folders to include.
 let folders = [
-	'app',
-	'dist',
-	'resources/lang',
-	'inc',
-	'template-parts',
-//	'resources/js',      // Required for WordPress.org theme review.
-//	'resources/scss',    // Required for WordPress.org theme review.
-	'vendor'
+	"app",
+	"dist",
+	"resources/lang",
+	"inc",
+	"template-parts",
+	//	'resources/js',      // Required for WordPress.org theme review.
+	//	'resources/scss',    // Required for WordPress.org theme review.
+	"vendor",
 ];
 
 // Delete the previous export to start clean.
-rimraf.sync( exportPath );
+rimraf.sync(exportPath);
 
 // Copy PHP files from root directory
-mix.copy( './*.php', exportPath );
+mix.copy("./*.php", exportPath);
 
 // Loop through the root files and copy them over.
-files.forEach( file => {
-
-	if ( fs.existsSync( file ) ) {
-		mix.copy( file, `${exportPath}/${file}` );
+files.forEach((file) => {
+	if (fs.existsSync(file)) {
+		mix.copy(file, `${exportPath}/${file}`);
 	}
-} );
+});
 
 // Loop through the folders and copy them over.
-folders.forEach( folder => {
-
-	if ( fs.existsSync( folder ) ) {
-		mix.copyDirectory( folder, `${exportPath}/${folder}` );
+folders.forEach((folder) => {
+	if (fs.existsSync(folder)) {
+		mix.copyDirectory(folder, `${exportPath}/${folder}`);
 	}
-} );
+});
 
 // Delete the `vendor/bin` and `vendor/composer/installers` folder, which can
 // get left over, even in production. Mix will also create an additional
 // `mix-manifest.json` file in the root, which we don't need.
-mix.then( () => {
-
+mix.then(() => {
 	let files = [
-		'mix-manifest.json',
+		"mix-manifest.json",
 		`${exportPath}/vendor/bin`,
-		`${exportPath}/vendor/composer/installers`
+		`${exportPath}/vendor/composer/installers`,
 	];
 
-	files.forEach( file => {
-		rimraf.sync( file );
-	} );
-} );
+	files.forEach((file) => {
+		rimraf.sync(file);
+	});
+});
