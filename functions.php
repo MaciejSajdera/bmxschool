@@ -134,7 +134,7 @@ add_action("widgets_init", "bmxschool_widgets_init");
  */
 function bmxschool_scripts() {
 
-	wp_enqueue_style( 'bmxschool-style', get_template_directory_uri() . '/dist/css/style.css', array(), '1.21');
+	wp_enqueue_style( 'bmxschool-style', get_template_directory_uri() . '/dist/css/style.css', array(), '1.25');
 
 	// Include our dynamic styles.
 	// $custom_css = bmxschool_dynamic_styles();

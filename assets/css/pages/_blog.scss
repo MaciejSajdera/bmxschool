@@ -133,7 +133,6 @@ body.blog {
 			flex-flow: column;
 			justify-content: center;
 			align-items: center;
-			height: 280px;
 
 			@media screen and (max-width: $screen__lg) {
 				width: 100%;
@@ -143,12 +142,16 @@ body.blog {
 
 			@media screen and (min-width: $screen__lg) {
 				margin: 0 0 3em 4em;
-				height: 420px;
 				align-items: flex-start;
 			}
 
 			img {
 				margin: auto;
+				max-height: 320px;
+
+				@media screen and (min-width: $screen__lg) {
+					max-height: 640px;
+				}
 			}
 		}
 

@@ -46,10 +46,11 @@ $args_past_events = array(
 )
 );
 
+$future_events = query_posts($args_future_events);
 $past_events = query_posts($args_past_events);
 
 
-// aktualnie sortuje malejaco do czasu edycji posta (najnowszy zaktuualizowany ostatni)
+// aktualnie sortuje malejaco do czasu edycji posta (najnowszy zaktualizowany ostatni)
 ?>
 
 <div id="primary" class="content-area">
@@ -66,33 +67,34 @@ $past_events = query_posts($args_past_events);
 
                 </header><!-- .page-header -->
 
-
+                <?php if ($future_events): ?>
 
                 <div class="future-events mb--8">
 
-
-                    <h3 class="text--section-title">Nadchodzące wyjazdy:</h3>
+                    <h3 class="text--section-title">Nadchodzące wydarzenia:</h3>
 
                     <ul class="blog-grid list-none">
 
-                        <?php
-                foreach( $future_event as $post ):
-                    setup_postdata( $post )
+                            <?php
+                    foreach( $future_event as $post ):
+                        setup_postdata( $post )
+                        ?>
+
+                            <li>
+                                <?php get_template_part( 'template-parts/single-post-tile', get_post_type() ); ?>
+                            </li>
+
+                            <?php
+                    endforeach;
                     ?>
-
-                        <li>
-                            <?php get_template_part( 'template-parts/single-post-tile', get_post_type() ); ?>
-                        </li>
-
-                        <?php
-                endforeach;
-                ?>
 
                     </ul>
 
                     <?php wp_reset_postdata(); ?>
 
                 </div>
+
+                <?php endif; ?>
 
                 <?php
 
@@ -101,7 +103,7 @@ $past_events = query_posts($args_past_events);
                 ?>
                 <div class="past-events mb--4">
 
-                    <h3 class="text--section-title">Minione wyjazdy:</h3>
+                    <h3 class="text--section-title">Minione wydarzenia:</h3>
 
                     <ul class="blog-grid list-none">
 

@@ -85,7 +85,7 @@ $content_1_image = $content_1["image"];
 
                         </div>
                         <div class="image-holder">
-                            <img class="box-shadow--standard border-radius--standard" src="https://bmxschool.grapewebtech.pl/wp-content/uploads/2022/07/bmxschool_lokalizacje_krakow2.png">
+                            <img class="box-shadow--standard border-radius--standard" src="https://bmxschool.pl/wp-content/uploads/2022/07/bmxschool_lokalizacje_krakow2.png">
                         </div>
                     </div>
                     <div class="photo-paragraphs__single flex-drow-mcol content-between">
@@ -114,7 +114,7 @@ $content_1_image = $content_1["image"];
 
                         </div>
                         <div class="image-holder">
-                            <img class="box-shadow--standard border-radius--standard" src="https://bmxschool.grapewebtech.pl/wp-content/uploads/2022/07/bmxschool_lokalizacje_warszawa.png">
+                            <img class="box-shadow--standard border-radius--standard" src="https://bmxschool.pl/wp-content/uploads/2022/07/bmxschool_lokalizacje_warszawa.png">
                         </div>
                     </div>
 
@@ -132,7 +132,7 @@ $content_1_image = $content_1["image"];
 
                         </div>
                         <div class="image-holder">
-                            <img class="box-shadow--standard border-radius--standard" src="https://bmxschool.grapewebtech.pl/wp-content/uploads/2022/07/bmxschool_lokalizacje_zakopanentarg.png">
+                            <img class="box-shadow--standard border-radius--standard" src="https://bmxschool.pl/wp-content/uploads/2022/07/bmxschool_lokalizacje_zakopanentarg.png">
                         </div>
                     </div>
                     <div class="photo-paragraphs__single flex-drow-mcol content-between">
@@ -146,7 +146,7 @@ $content_1_image = $content_1["image"];
 
                         </div>
                         <div class="image-holder">
-                            <img class="box-shadow--standard border-radius--standard" src="https://bmxschool.grapewebtech.pl/wp-content/uploads/2022/07/bmxschool_lokalizacje_lublin.png">
+                            <img class="box-shadow--standard border-radius--standard" src="https://bmxschool.pl/wp-content/uploads/2022/07/bmxschool_lokalizacje_lublin.png">
                         </div>
                     </div>
                     <div class="photo-paragraphs__single flex-drow-mcol content-between">
@@ -163,7 +163,7 @@ $content_1_image = $content_1["image"];
 
                         </div>
                         <div class="image-holder">
-                            <img class="box-shadow--standard border-radius--standard" src="https://bmxschool.grapewebtech.pl/wp-content/uploads/2022/07/bmxschool_lokalizacje_katowice.png">
+                            <img class="box-shadow--standard border-radius--standard" src="https://bmxschool.pl/wp-content/uploads/2022/07/bmxschool_lokalizacje_katowice.png">
                         </div>
                     </div>
 

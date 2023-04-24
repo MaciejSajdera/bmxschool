@@ -42,7 +42,7 @@ $time = get_field('time');
 		}
 
 		if ($local) {
-			echo '<div class="wyjazd-info flex items-center content-between w--fit"><p class="w-min--12 w-max--14"><strong>Miejsce wydarzenia: </strong></p>'.mb_strimwidth( html_entity_decode($spot), 0, 60, '...' ).'</p></div>';
+			echo '<div class="wyjazd-info flex items-center content-between w--fit"><p class="w-min--12 w-max--14"><strong>Miejsce: </strong></p>'.mb_strimwidth( html_entity_decode($spot), 0, 60, '...' ).'</p></div>';
 		}
 
 		echo '<div class="wyjazd-info flex items-center content-between w--fit"><p class="w-min--12 w-max--14"><strong>Godzina: </strong></p>'.mb_strimwidth( html_entity_decode($time), 0, 60, '...' ).'</p></div>';
