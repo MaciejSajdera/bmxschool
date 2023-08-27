@@ -34,11 +34,9 @@ $content_1_image = $content_1["image"];
         <div class="site-content--padding max-width--xl">
             <section class="text-center regular-content">
                 <h2 class="mb--3 uppercase"><?php echo $content_1['header'] ?></h2>
-                <div><?php echo $content_1['description'] ?></div>
-                <div class="image-holder">
-                    <img class="box-shadow--standard border-radius--standard" src="<?php echo $content_1_image[
-                    	"url"
-                    ]; ?>" />
+                <div class="mb--1"><?php echo $content_1['description'] ?></div>
+                <div class="image-holder items-center content-center">
+                    <img class="box-shadow--standard border-radius--standard" src="<?php echo $content_1_image["url"]; ?>" alt="<?php echo $content_1_image["alt"]; ?>" />
                 </div>
             </section>
 

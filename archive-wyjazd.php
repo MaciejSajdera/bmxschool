@@ -19,7 +19,6 @@ $args_future_events = array(
     'meta_query' => array(
         array(
            'key' => 'wyjazd_start_date',
-           'meta-value' => $value,
            'value' => $today,
            'compare' => '>=',
            'type' => 'DATE'// you can change it to datetime also
@@ -34,11 +33,10 @@ $args_past_events = array(
 	'posts_per_page'    => -1,
 	'meta_key'          => 'wyjazd_start_date',
     'orderby' => 'meta_value',
-	'order'             => 'ASC',
+	'order'             => 'DESC',
     'meta_query' => array(
         array(
            'key' => 'wyjazd_start_date',
-           'meta-value' => $value,
            'value' => $today,
            'compare' => '<',
            'type' => 'DATE'// you can change it to datetime also
@@ -103,7 +101,7 @@ $past_events = query_posts($args_past_events);
                 ?>
                 <div class="past-events mb--4">
 
-                    <h3 class="text--section-title">Minione wydarzenia:</h3>
+                    <h3 class="text--section-title">Minione:</h3>
 
                     <ul class="blog-grid list-none">
 
