@@ -90,11 +90,29 @@ $welcome_view = get_field("welcome_view");
                     <div class="offer-option__details-container">
                         <div class="offer-option__details">
                             <p class="name text--smallheader">Pojedyncze zajęcia (90min)</p>
-                            <p class="price text--smallheader">55 PLN</p>
+                            <p class="price text--smallheader">60 PLN</p>
                         </div>
                         <div class="offer-option__details">
                             <p class="name text--smallheader">Pakiet 10 zajęć (10 x 90min)</p>
-                            <p class="price text--smallheader">450 PLN</p>
+                            <p class="price text--smallheader">500 PLN</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="offer-option offer-option--3">
+                    <h3 class="text-center mb--2">Weekendowe Zajęcia Grupowe</h3>
+                    <div class="offer-option__details-container">
+                        <div class="offer-option__details">
+                            <p class="name text--smallheader">2H (120min)</p>
+                            <p class="price text--smallheader">100 PLN</p>
+                        </div>
+                        <div class="offer-option__details">
+                            <p class="name text--smallheader">3H (180min)</p>
+                            <p class="price text--smallheader">150 PLN</p>
+                        </div>
+                        <div class="offer-option__details">
+                            <p class="name text--smallheader">6H (360min)</p>
+                            <p class="price text--smallheader">250 PLN</p>
                         </div>
                     </div>
                 </div>
