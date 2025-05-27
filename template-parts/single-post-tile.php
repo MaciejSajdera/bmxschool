@@ -12,8 +12,6 @@ $map_travel_icon = file_get_contents(
         "/dist/svg/map_travel_icon.svg"
 );
 
-// <div class="icon icon--bg absolute"></div>
-
 ?>
 
 <article id="post-<?php echo $id ?>" <?php post_class(); ?>>
@@ -22,7 +20,7 @@ $map_travel_icon = file_get_contents(
 
 echo '<a class="blog-post link-none" href="'. get_permalink() .'">';
 
-echo '<h3 class="mb--1">'.$title.'</h3>';
+echo '<h3 class="title mb--1" title="'.$title.'">'.$title.'</h3>';
 
 echo '
     <div class="blog-post relative overflow--hidden mb--2">
@@ -38,10 +36,11 @@ echo '
 
 echo '<div class="blog-post__text">';
 echo '<p>' .  $excerpt . '</p>';
-echo '<span>Opublikowano:'.get_the_date().'</span>';
 echo '</div>';
 
 echo '</a>';
 
 ?>
 </article><!-- #post-<?php the_ID(); ?> -->
+
+<div class="published">Opublikowano:<span class="ml--1"><?php echo get_the_date(); ?></span></div>

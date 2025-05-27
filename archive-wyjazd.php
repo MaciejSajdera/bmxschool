@@ -57,14 +57,6 @@ $past_events = query_posts($args_past_events);
 
             <section class="regular-content mt--2">
 
-
-                <header class="page-header mb--4">
-
-                    <?php post_type_archive_title( '<h1 class="page-title mb--3">', '</h1>' ); ?>
-                    <h2><?php echo get_the_archive_description() ?></h2>
-
-                </header><!-- .page-header -->
-
                 <?php if ($future_events): ?>
 
                 <div class="future-events mb--8">
@@ -78,7 +70,7 @@ $past_events = query_posts($args_past_events);
                         setup_postdata( $post )
                         ?>
 
-                            <li>
+                            <li class="blog-grid__item">
                                 <?php get_template_part( 'template-parts/single-post-tile', get_post_type() ); ?>
                             </li>
 
@@ -101,7 +93,7 @@ $past_events = query_posts($args_past_events);
                 ?>
                 <div class="past-events mb--4">
 
-                    <h3 class="text--section-title">Minione:</h3>
+                    <h3 class="text--section-title">Minione wydarzenia:</h3>
 
                     <ul class="blog-grid list-none">
 
@@ -110,7 +102,7 @@ $past_events = query_posts($args_past_events);
                             setup_postdata( $post )
                             ?>
 
-                        <li>
+                        <li class="blog-grid__item">
                             <?php get_template_part( 'template-parts/single-post-tile', get_post_type() ); ?>
                         </li>
 
